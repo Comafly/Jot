@@ -1,0 +1,278 @@
+
+/* General */
+.app {
+  min-width: 90vw;
+  padding: 0 20px;
+}
+
+hr.solid-line
+{
+    border-top: 2px solid #4e4e4e;
+}
+
+body {
+  background: linear-gradient(to top, #000000, #464646);
+  color: #fff;  
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+textarea {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 25px;
+  display: flex;
+  align-items: center;
+}
+.logo-text{
+  margin-left: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+
+
+
+/* Note and Tag Input Fields */
+.notes-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.new-note-input{
+  margin-top:60px;
+  width: 45%;
+  transition: width 0.5s ease-in-out;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  resize: vertical;
+  overflow: auto;
+}
+
+.new-tags-input  {
+  width: 45%;
+  transition: width 0.5s ease-in-out;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  resize: vertical;
+  overflow: auto;
+}
+
+.add-note-btn {
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-note-btn:hover {
+  background-color: #666;
+}
+
+
+
+/* Notes Display */
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.note {
+  min-width: 150px;
+  max-width: 18%;
+  flex-basis: 80%;
+  margin: 20px;
+  padding: 40px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  height: 100%;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.note-text-area{
+  white-space: pre-wrap;
+}
+
+.note-tags{
+  color: rgb(158, 158, 158);
+  font-size: 14px;
+  margin-top: 15px;
+  font-style: italic
+}
+
+.note-tag{
+  cursor: pointer;
+}
+.note-tag:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #242424;
+  color:#fff;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 3px 8px 4px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: #d10000;
+  color:#d8d8d8;
+}
+
+.edit-btn {
+  background-color: #242424;
+  color:#fff;
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  padding: 0px 5px 0px 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.edit-btn:hover {
+  background-color: #d18f00;
+  color:#d8d8d8;
+}
+
+
+
+/* Search Field */
+.search-form-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.search-form{
+  padding: 8px;
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  resize: vertical;
+}
+
+.clear-search-btn {
+  cursor: default;
+  background-color: #333;
+  color:#fff;
+  padding: 8px 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10%;
+}
+
+.clear-search-btn-with-text{
+  cursor: pointer;
+  outline: 2px solid #d10000;
+}
+.clear-search-btn-with-text:hover {
+  background-color: #d10000;
+}
+
+
+
+/* Note Editor */
+.note-editor-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.note-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  min-width: 45%;
+  z-index: 10;
+
+  font-size: 18px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease-in-out;
+}
+
+.note-editor textarea {
+  display: block;
+  margin: 5px;
+  min-width: 90%;
+  min-height: 150px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+.note-editor input {
+  min-width: 90%;
+  display: block;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+.note-editor button {
+  display: block;
+  margin: 5px;
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.note-editor button:hover {
+  background-color: #666;
+}
