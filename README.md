@@ -55,7 +55,6 @@ MERN is an acronym that stands for: **M**ongoDB, **E**xpress, **R**eact, **N**od
 
 #
 ## Additional Modules
-#
 
 In addition to the MERN stack, extra modules have been implemented to provide more functionality and greater security.
 
